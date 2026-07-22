@@ -1,0 +1,56 @@
+{
+  "name": "@bizkit.io/webclient",
+  "version": "1.0.0",
+  "description": "Web client to get bizkit.io tokens",
+  "keywords": [
+    "bizkit.io",
+    "paywall",
+    "token"
+  ],
+  "homepage": "https://github.com/bizkit-io/webclient#readme",
+  "bugs": {
+    "url": "https://github.com/bizkit-io/webclient/issues"
+  },
+  "license": "MIT",
+  "author": "bizkit.io <dev@bizkit.io>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bizkit-io/webclient.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build",
+    "prepare": "vp config"
+  },
+  "dependencies": {
+    "p-throttle": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "bumpp": "^12.2.0",
+    "typescript": "^7.0.2",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.17.0",
+      "onFail": "download"
+    }
+  }
+}
