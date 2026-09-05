@@ -78,5 +78,7 @@ declare global {
   function bizkit_init(production: boolean): Promise<void>;
   function get_bizkit_token(): Promise<BizkitToken>;
 }
-window.bizkit_init = bizkit_init;
-window.get_bizkit_token = get_bizkit_token;
+if (window) {
+  window.bizkit_init = bizkit_init;
+  window.get_bizkit_token = get_bizkit_token;
+}
