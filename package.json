@@ -1,6 +1,6 @@
 {
   "name": "@bizkit.io/webclient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web client to get bizkit.io tokens",
   "keywords": [
     "bizkit.io",
