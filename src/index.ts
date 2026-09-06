@@ -37,7 +37,9 @@ async function ping(): Promise<void> {
 export async function bizkit_init(production: boolean): Promise<void> {
   if (iframe && ready) return;
 
-  src = production ? import.meta.env.TSDOWN_BIZKIT_URL : import.meta.env.TSDOWN_BIZKIT_DEV_URL;
+  src =
+    (production ? import.meta.env.TSDOWN_BIZKIT_URL : import.meta.env.TSDOWN_BIZKIT_DEV_URL) +
+    import.meta.env.TSDOWN_BIZKIT_IFRAME;
 
   return new Promise((resolve, _reject) => {
     async function onload() {
