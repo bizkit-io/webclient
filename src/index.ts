@@ -71,7 +71,13 @@ const reliable_comm = throttle(_reliable_comm);
 
 export async function get_bizkit_token(): Promise<BizkitToken> {
   if (!iframe || !ready) return Promise.reject('not initialized!');
-  return reliable_comm<BizkitToken>({ op: 'get_bizkit_token', url: location.origin }, 2000);
+  let token: BizkitToken = await reliable_comm<BizkitToken>(
+    { op: 'get_bizkit_token', url: location.origin },
+    2000,
+  );
+  const abs_url = new URL(token.url, src);
+  token.url = abs_url.toString();
+  return token;
 }
 
 declare global {
