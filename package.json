@@ -1,6 +1,6 @@
 {
   "name": "@bizkit.io/webclient",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Web client to get bizkit.io tokens",
   "keywords": [
     "bizkit.io",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
-    "bumpp": "^12.2.2",
+    "bumpp": "^12.3.0",
     "typescript": "^7.0.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0",
     "vite-plus": "catalog:"
