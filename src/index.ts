@@ -5,6 +5,7 @@ export type BizkitToken = {
   url: string;
 };
 
+let host: string;
 let src: string;
 let iframe: HTMLIFrameElement;
 let ready: boolean = false;
@@ -37,9 +38,8 @@ async function ping(): Promise<void> {
 export async function bizkit_init(production: boolean): Promise<void> {
   if (iframe && ready) return;
 
-  src =
-    (production ? import.meta.env.TSDOWN_BIZKIT_URL : import.meta.env.TSDOWN_BIZKIT_DEV_URL) +
-    import.meta.env.TSDOWN_BIZKIT_IFRAME;
+  host = production ? import.meta.env.TSDOWN_BIZKIT_URL : import.meta.env.TSDOWN_BIZKIT_DEV_URL;
+  src = host + import.meta.env.TSDOWN_BIZKIT_IFRAME;
 
   return new Promise((resolve, _reject) => {
     async function onload() {
@@ -77,7 +77,7 @@ export async function get_bizkit_token(): Promise<BizkitToken> {
     { op: 'get_bizkit_token', url: location.origin },
     2000,
   );
-  const abs_url = new URL(token.url, src);
+  const abs_url = new URL(token.url, host);
   token.url = abs_url.toString();
   return token;
 }
