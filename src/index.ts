@@ -35,8 +35,10 @@ async function ping(): Promise<void> {
   return Promise.reject();
 }
 
-export async function bizkit_init(production: boolean): Promise<void> {
+export async function bizkit_init(production: boolean, id: string): Promise<void> {
   if (iframe && ready) return;
+
+  if (!id) return Promise.reject('need content provider id');
 
   host = production ? import.meta.env.TSDOWN_BIZKIT_URL : import.meta.env.TSDOWN_BIZKIT_DEV_URL;
   src = host + import.meta.env.TSDOWN_BIZKIT_IFRAME;
@@ -80,13 +82,4 @@ export async function get_bizkit_token(): Promise<BizkitToken> {
   const abs_url = new URL(token.url, host);
   token.url = abs_url.toString();
   return token;
-}
-
-declare global {
-  function bizkit_init(production: boolean): Promise<void>;
-  function get_bizkit_token(): Promise<BizkitToken>;
-}
-if (typeof window !== 'undefined' && window !== undefined) {
-  window.bizkit_init = bizkit_init;
-  window.get_bizkit_token = get_bizkit_token;
 }

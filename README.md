@@ -19,7 +19,7 @@ import { type BizkitToken, bizkit_init, get_bizkit_token } from '@bizkit.io/webc
 - Initialize the web client:
 
 ```typescript
-await bizkit_init(false); // false for development, true for production
+await bizkit_init(false, 'HU-A100BB'); // false for development, true for production
 ```
 
 - Get a token:
