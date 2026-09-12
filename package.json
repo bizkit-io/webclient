@@ -1,6 +1,6 @@
 {
   "name": "@bizkit.io/webclient",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Web client to get bizkit.io tokens",
   "keywords": [
     "bizkit.io",
@@ -49,7 +49,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.3.4",
+      "version": "12.4.1",
       "onFail": "download"
     }
   }
