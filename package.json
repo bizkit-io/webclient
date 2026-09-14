@@ -37,13 +37,13 @@
     "prepare": "vp config"
   },
   "dependencies": {
-    "p-throttle": "^8.1.0"
+    "p-throttle": "^8.1.1"
   },
   "devDependencies": {
-    "@types/node": "^26.4.1",
+    "@types/node": "^26.5.1",
     "bumpp": "^12.3.0",
     "typescript": "^7.0.2",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.0",
+    "vite": "npm:@voidzero-dev/vite-plus-core@0.3.1",
     "vite-plus": "catalog:"
   },
   "devEngines": {
