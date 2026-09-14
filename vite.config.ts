@@ -5,9 +5,10 @@ export default defineConfig({
     '*': 'vp check --fix',
   },
   pack: {
+    deps: { resolveDepSubpath: true },
     envFile: '.env',
     dts: {
-      tsgo: true,
+      generator: 'tsgo',
     },
     exports: true,
     minify: true,
